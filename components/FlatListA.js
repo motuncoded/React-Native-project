@@ -2,7 +2,7 @@ import { View, Text, FlatList, StyleSheet } from 'react-native'
 import React from 'react'
 
 
-const menuItemDisplay = [
+const ItemDisplay = [
     { name: "Chairs", id: "1A" },
     { name: "Desks", id:"2B" },
     { name: "Cupboard", id:"3c" },
@@ -36,7 +36,7 @@ const FlatListA = () => {
 const renderItem =({item}) => <Item name={item.name}/>
 return (
   <View>
-    <FlatList data={menuItemDisplay} renderItem={renderItem} keyExtractor={(item => item.id)}
+    <FlatList data={ItemDisplay} renderItem={renderItem} keyExtractor={(item => item.id)}
       ItemSeparatorComponent={Seperator}  ListHeaderComponent={Header} ListFooterComponent={Footer}/>
     </View>
   )
