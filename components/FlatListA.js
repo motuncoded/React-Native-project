@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native'
+import { View, Text, FlatList, StyleSheet, ScrollView } from 'react-native'
 import React from 'react'
 
 
@@ -19,13 +19,16 @@ const ItemDisplay = [
 ]
 const Seperator = () => <View style={ItemStyles.seperator}></View>;
 
-const Header = () => <Text>List of Furnitures</Text>
-const Footer = () => <Text>All Rights are reserved 2024.</Text>
+const Header = () => <Text style={{ fontSize: 30, textAlign: "center"}}>List of Furnitures</Text>
 
 const Item = ({ name }) => {
   return (
     <View  style={{ flex: .8 }}>
-      <Text style={ItemStyles.item}>{name}</Text>
+          <ScrollView>
+
+        <Text style={ItemStyles.item}>{name}</Text>
+            </ScrollView>
+
     </View>
   )
 }
@@ -37,8 +40,8 @@ const renderItem =({item}) => <Item name={item.name}/>
 return (
   <View>
     <FlatList data={ItemDisplay} renderItem={renderItem} keyExtractor={(item => item.id)}
-      ItemSeparatorComponent={Seperator}  ListHeaderComponent={Header} ListFooterComponent={Footer}/>
-    </View>
+      ItemSeparatorComponent={Seperator}  ListHeaderComponent={Header}/>
+  </View>
   )
 }
 const ItemStyles = StyleSheet.create({
