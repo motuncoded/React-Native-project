@@ -5,6 +5,7 @@ const TextInputA = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>Welcome to Arm Furnitures</Text>
+      <Text></Text>
     </View>
   )
 }
