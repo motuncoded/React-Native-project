@@ -4,7 +4,7 @@ import React from 'react'
 const TextInputA = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Welcome to Arm Furnitures</Text>
+      <Text style={styles.header}>TextInput with KeyboardDismissMode</Text>
       <Text></Text>
     </View>
   )
@@ -17,4 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
  backgroundColor: "#495e57",
     },
+  header:{
+    fontSize:20,
+  }
 })
