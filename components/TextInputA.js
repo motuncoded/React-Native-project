@@ -16,7 +16,7 @@ const TextInputA = () => {
     <TextInput value={firstName}
     placeholder="firstName"
       onchangeText={onchangeFirstName}/>
-    </Scroll View>
+    </ScrollView>
   )
 }
 
