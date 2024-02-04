@@ -6,6 +6,8 @@ import SectionListA from "./components/SectionListA";
 import TextInputA from "./components/TextInputA";
 import TextInputB from "./components/TextInputB";
 import PressableA from "./components/PressableA";
+import ImageArm from "./components/ImageArm";
+import ImageBacArm from "./components/ImageBacArm";
 
 export default function App() {
   return (
@@ -20,8 +22,10 @@ export default function App() {
 <FlatListA/>
   <SectionListA/>*
       
-    <TextInputA/> */}
-      <PressableA/>
+    <TextInputA/> 
+    <PressableA/>
+    <ImageArm/>*/}
+    <ImageBacArm/>
     </View>
   );
 }
