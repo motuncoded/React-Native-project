@@ -7,7 +7,7 @@ const ItemDisplay = [
   { name: "Cupboard", id: "3c" },
   { name: "Tables", id: "4D" },
   { name: "Shoe Racks", id: "5E" },
-  { name: "Stool", id: "6F" },
+  { name: "Stools", id: "6F" },
   { name: "Drawers", id: "7G" },
   { name: "Dinning Tables", id: "8HR" },
 ];
