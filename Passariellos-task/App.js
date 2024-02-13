@@ -67,7 +67,7 @@ export default function App() {
               return (
                 <View>
                               <Ionicons name="location" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
-                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Morw</Text>
+                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>More</Text>
 
                 </View>
               )
