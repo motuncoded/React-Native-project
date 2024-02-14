@@ -4,7 +4,7 @@ import React from 'react'
 const Menu = () => {
   return (
     <View>
-      <Text>Menu</Text>
+      <Text style={{color:"#fff"}}>Menu</Text>
     </View>
   )
 }

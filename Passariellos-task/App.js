@@ -1,24 +1,27 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator,Navigator } from '@react-navigation/bottom-tabs';
 import { Home, More, Menu, Location } from "./@screens";
 import { AntDesign } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { Feather } from '@expo/vector-icons';
+
 
 
 export default function App() {
+const Tab = createBottomTabNavigator();
 
   const screenOptions = {
-    tabBarShowLabel: true,
+    tabBarShowLabel: false,
     headerShown: false,
     tabBarStyle: {
       position: "absolute",
       bottom:0,
       right:0,
       left: 0,
-      height: 80,
+      height: 60,
       background:"#fafafa"
     }
   }
@@ -30,7 +33,7 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View style={{ alignSelf: "center" }}>
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
               <AntDesign name="home" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
                   <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Home</Text>
           </View> 
@@ -41,10 +44,9 @@ export default function App() {
           options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View>
-                      <MaterialIcons name="restaurant-menu" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <MaterialIcons name="restaurant-menu" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
                   <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Menu & Order</Text>
-
                 </View>
               )
             }
@@ -53,8 +55,8 @@ export default function App() {
         options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View>
-                              <Ionicons name="location" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Ionicons name="location" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
                   <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Location</Text>
 
                 </View>
@@ -65,10 +67,9 @@ export default function App() {
         <Tab.Screen name="More" component={More } options={{
             tabBarIcon: ({ focused }) => {
               return (
-                <View>
-                              <Ionicons name="location" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
+                <View style={{ alignItems: "center", justifyContent: "center" }}>
+                  <Feather name="shopping-bag" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
                   <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>More</Text>
-
                 </View>
               )
             }
