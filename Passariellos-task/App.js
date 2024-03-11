@@ -34,8 +34,8 @@ const Tab = createBottomTabNavigator();
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
-              <AntDesign name="home" size={24} color={focused ? "#ff6700" :"#0a0a0a"} />
-                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Home</Text>
+              <AntDesign name="home" size={24} color={focused ? "#890101":"#0a0a0a"} />
+                  <Text style={{ fontSize: 12 }} color={focused ? "#890101" :"#0a0a0a"}>Home</Text>
           </View> 
               )
            
@@ -45,8 +45,8 @@ const Tab = createBottomTabNavigator();
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
-                  <MaterialIcons name="restaurant-menu" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
-                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Menu & Order</Text>
+                  <MaterialIcons name="restaurant-menu" size={24} color={focused ? "#890101" : "#0a0a0a"} />
+                  <Text style={{ fontSize: 12 }} color={focused ? "#890101" :"#0a0a0a"}>Menu & Order</Text>
                 </View>
               )
             }
@@ -56,8 +56,8 @@ const Tab = createBottomTabNavigator();
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
-                  <Ionicons name="location" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
-                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>Location</Text>
+                  <Ionicons name="location" size={24} color={focused ? "#890101" : "#0a0a0a"} />
+                  <Text style={{ fontSize: 12 }} color={focused ? "#890101" :"#0a0a0a"}>Location</Text>
 
                 </View>
               )
@@ -68,8 +68,8 @@ const Tab = createBottomTabNavigator();
             tabBarIcon: ({ focused }) => {
               return (
                 <View style={{ alignItems: "center", justifyContent: "center" }}>
-                  <Feather name="shopping-bag" size={24} color={focused ? "#ff6700" : "#0a0a0a"} />
-                  <Text style={{ fontSize: 12 }} color={focused ? "#ff6700" :"#0a0a0a"}>More</Text>
+                  <Feather name="shopping-bag" size={24} color={focused ? "#890101" : "#0a0a0a"} />
+                  <Text style={{ fontSize: 12 }} color={focused ? "#890101" :"#0a0a0a"}>More</Text>
                 </View>
               )
             }
