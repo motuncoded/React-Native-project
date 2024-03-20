@@ -3,9 +3,9 @@ import React from 'react'
 
 const Screen3 = () => {
   return (
-      <View style={{flex:1}}>
-          <View style={{backgroundColor:"blue"}}>
-             <Text>sdfgh</Text> 
+      <View style={{flex:1, padding:40}}>
+          <View style={{backgroundColor:"blue", flex:.8}}>
+             <Text style={{color:"red"}} >sdfgh</Text> 
           </View>
           <View>
               
