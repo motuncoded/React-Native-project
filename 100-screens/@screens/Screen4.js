@@ -1,18 +1,55 @@
 import { View, Text, Pressable, StyleSheet } from "react-native";
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { Fontisto } from "@expo/vector-icons";
 
 const Screen4 = () => {
   const quotes = [
     {
-      id: 1,
       message: "You do not find the happy life. You make it.",
       author: "Camilla Eyring Kimball",
-      bcg: "#8A2BE2",
-    }
-   
+    },
+    {
+      message: "You do not find the happy life. You make it.",
+      author: "Camilla Eyring Kimballc",
+    },
   ];
+  const [current, setCurrent] = useState(0);
+ const [backgroundColor, setBackgroundColor] = useState(
+   styles.container.backgroundColor,
+  )
+   const [color, setColor] = useState(
+   styles.icon.backgroundColor
+   )
+  
+  const Length = quotes.length;
+
+  const prevSlide = () => {
+    setCurrent(current === Length - 1 ? 0 : current + 1);
+  };
+  const nextSlide = () => {
+    setCurrent(current === 0 ? Length - 1 : current - 1);
+  };
+
+  if (!Array.isArray(quotes) || quotes.length <= 0) {
+    return null;
+  }
+
+  const goToQuote = (quoteIndex) => {
+    setCurrent(quoteIndex);
+    setBackgroundColor("#000000");
+      setColor("#000000");
+
+  };
+
   return (
-    <View style={styles.container}>
+    <View
+      style={{
+        backgroundColor: backgroundColor,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
       <View style={styles.cardContainer}>
         <View style={[styles.card, styles.card2]}></View>
         <View
@@ -23,26 +60,35 @@ const Screen4 = () => {
             styles.shadowProp,
           ]}
         >
-          {quotes.map((quote) => {
+          {quotes.map((quote, quoteIndex) => {
             return (
-              <View style={styles.quoteContainer}>
-                <View style={{
-                  display: "flex",
-                }}>
-                <Text style={styles.marks}>"</Text>
-                <Text style={styles.quote}>{quote.message}</Text>
-                </View>
-                <Text style={styles.author}>{quote.author}</Text>
+              <View>
+                {quoteIndex === current && (
+                  <View style={styles.quoteContainer} key={quoteIndex}>
+                    <Text style={{ color: Color,  }}>
+                      <Fontisto name="quote-a-right" size={24} />
+                    </Text>
+                    <View style={{ flexDirection: "column" }}>
+                      <Text style={styles.quote}>{quote.message}</Text>
+                      <Text style={styles.author}>{quote.author}</Text>
+                    </View>
+                  </View>
+                )}
               </View>
             );
-
           })}
         </View>
       </View>
       <View style={styles.circleContainer}>
-        <Pressable style={styles.circle}></Pressable>
-        <Pressable style={styles.circle}></Pressable>
-        <Pressable style={styles.circle}></Pressable>
+        {quotes.map((quote, quoteIndex) => {
+          return (
+            <Pressable
+              key={quoteIndex}
+              onPress={({ pressed }) => goToQuote(quoteIndex)}
+              style={styles.circle}
+            ></Pressable>
+          );
+        })}
       </View>
     </View>
   );
@@ -50,9 +96,13 @@ const Screen4 = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8A2BE2",
-    justifyContent: "center",
+    backgroundColor: "green",
+      justifyContent : "center",
     alignItems: "center",
+  },
+  red: {
+        backgroundColor: "red",
+
   },
   cardContainer: {
     display: "flex",
@@ -95,24 +145,25 @@ const styles = StyleSheet.create({
     transformOrigin: "top right",
   },
   quoteContainer: {
-    marginTop: 280,
+    marginTop: 200,
+    marginHorizontal:20,
+    flexDirection: "row",
   },
   quote: {
-    fontSize: 40,
-   
+    fontSize: 38,
+    paddingHorizontal:20
   },
-  marks: {
-    fontSize: 50,
-    color: "gray",
-  },
+ 
   author: {
-    paddingHorizontal: 10,
-    paddingVertical:20
+        paddingHorizontal:20,
+
+    paddingVertical: 20,
   },
 
   circleContainer: {
-    marginVertical: 80,
+    display: "flex",
     flexDirection: "row",
+    height: 50,
   },
 
   circle: {
@@ -120,7 +171,8 @@ const styles = StyleSheet.create({
     height: 5,
     backgroundColor: "#fafafa",
     borderRadius: 50,
-    margin: 2,
+    marginVertical: 20,
+    marginHorizontal: 2,
   },
 });
 
