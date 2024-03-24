@@ -5,12 +5,25 @@ import { Fontisto } from "@expo/vector-icons";
 const Screen4 = () => {
   const quotes = [
     {
-      message: "You do not find the happy life. You make it.",
-      author: "Camilla Eyring Kimball",
+      message: "First, solve the problem. Then, write the code.",
+      author: "John Johnson",
     },
     {
-      message: "You do not find the happy life. You make it.",
-      author: "Camilla Eyring Kimballc",
+      message: "Coding like poetry should be short and concise.",
+      author: "Santosh Kalwar",
+    },
+    {
+      message: "Code is like humor. When you have to explain it, it is bad.",
+      author: "Cory House",
+    },
+    {
+      message:
+        "Clean code always looks like it was written by someone who cares..",
+      author: "Robert C. Martin",
+    },
+    {
+      message: "Confusion is part of programming. ",
+      author: "Felienne Hermans",
     },
   ];
   const [current, setCurrent] = useState(0);
@@ -18,9 +31,10 @@ const Screen4 = () => {
    styles.container.backgroundColor,
   )
    const [color, setColor] = useState(
-   styles.icon.backgroundColor
+   styles.icon.color
    )
-  
+  const colors = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042", "#A020F0"];
+
   const Length = quotes.length;
 
   const prevSlide = () => {
@@ -36,8 +50,8 @@ const Screen4 = () => {
 
   const goToQuote = (quoteIndex) => {
     setCurrent(quoteIndex);
-    setBackgroundColor("#000000");
-      setColor("#000000");
+    setBackgroundColor(colors[quoteIndex]);
+      setColor(colors[quoteIndex]);
 
   };
 
@@ -65,7 +79,7 @@ const Screen4 = () => {
               <View>
                 {quoteIndex === current && (
                   <View style={styles.quoteContainer} key={quoteIndex}>
-                    <Text style={{ color: Color,  }}>
+                    <Text style={{ color: color }}>
                       <Fontisto name="quote-a-right" size={24} />
                     </Text>
                     <View style={{ flexDirection: "column" }}>
@@ -96,13 +110,11 @@ const Screen4 = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "green",
-      justifyContent : "center",
+    justifyContent: "center",
     alignItems: "center",
   },
-  red: {
-        backgroundColor: "red",
-
+  icon: {
+    backgroundColor: "green",
   },
   cardContainer: {
     display: "flex",
@@ -145,17 +157,19 @@ const styles = StyleSheet.create({
     transformOrigin: "top right",
   },
   quoteContainer: {
-    marginTop: 200,
-    marginHorizontal:20,
+    marginVertical: 60,
+    marginHorizontal: 20,
+
+    justifyContent: "center",
     flexDirection: "row",
   },
   quote: {
     fontSize: 38,
-    paddingHorizontal:20
+    paddingHorizontal: 20,
   },
- 
+
   author: {
-        paddingHorizontal:20,
+    paddingHorizontal: 25,
 
     paddingVertical: 20,
   },
