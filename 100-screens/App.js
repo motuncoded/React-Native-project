@@ -1,25 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Screen1 from './@screens/Screen1';
-import Screen2 from './@screens/Screen2';
-import Screen3 from "./@screens/Screen2";
-import Screen4 from "./@screens/Screen4";
+import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
 
+import { createStackNavigator } from "@react-navigation/stack";
+import Signup from "./@screens/Screen2/Signup";
 
+import Signin from "./@screens/Screen2/Signin";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Screen4 />
+  const Stack = createStackNavigator();
 
-    </View>
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="Signin" component={Signin} />
+        <Stack.Screen name="Signup" component={Signup} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-  
   },
 });
-
