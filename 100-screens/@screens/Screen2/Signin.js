@@ -1,7 +1,9 @@
-import { View, Text, Pressable, StyleSheet, TextInput, useState } from "react-native";
+import { View, Text, Pressable, StyleSheet, TextInput } from "react-native";
+import {useState} from "react"
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
 import { FontAwesome6 } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Signin = ({ navigation }) => {
   const [input, setInput] = useState({
@@ -9,9 +11,13 @@ const Signin = ({ navigation }) => {
     password: ""
 
   })
-  const hancdleFormChange = (event) => {
+  const handleFormChange = (event) => {
     const { email } = event.target
 setInput((prev)=>({...prev, [email]:value}))
+  }
+  const handleSubmit = (event) => {
+        event.preventDefault();
+ navigation.navigate("Dashboard");
   }
   
   
@@ -33,28 +39,42 @@ setInput((prev)=>({...prev, [email]:value}))
             <Text
               style={{
                 color: "grey",
-                fontSize: 10,
-                              fontWeight:"bold"
-
+                fontSize: 11,
+                fontWeight: "bold",
               }}
             >
               Your Email
             </Text>
-            <TextInput style={styles.input} value={input.email} onChange={hancdleFormChange} ></TextInput>
+            <TextInput
+              style={styles.input}
+              value={input.email}
+              onChange={handleFormChange}
+            ></TextInput>
           </View>
           <View style={{ marginVertical: 30 }}>
             <Text
               style={{
                 color: "grey",
-                fontSize: 10,
-                fontWeight:"bold"
+                fontSize: 11,
+                fontWeight: "bold",
               }}
             >
               Password
             </Text>
-            <TextInput style={styles.input} value={input.password} onChange={hancdleFormChange} secureTextEntry></TextInput>
+            <View>
+              <TextInput
+                style={styles.input}
+                value={input.password}
+                onChange={handleFormChange}
+                secureTextEntry={true}
+              />
+              
+            </View>
           </View>
-          <Pressable style={{ backgroundColor: "#1B1212", borderRadius: 50 }} onPress={handleSubmit}>
+          <Pressable
+            style={{ backgroundColor: "#1B1212", borderRadius: 50 }}
+            onPress={handleSubmit}
+          >
             <Text
               style={{
                 textAlign: "center",
