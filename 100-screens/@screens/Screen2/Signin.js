@@ -6,75 +6,47 @@ import { FontAwesome6 } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
 
 const Signin = ({ navigation }) => {
-  const [input, setInput] = useState({
-    email: "",
-    password: ""
-
-  })
-  const handleFormChange = (event) => {
-    const { email } = event.target
-setInput((prev)=>({...prev, [email]:value}))
-  }
-  const handleSubmit = (event) => {
-        event.preventDefault();
- navigation.navigate("Dashboard");
-  }
+  
   
   
 
   return (
     <View style={styles.container}>
       <View style={styles.sign}>
-        <Pressable
-          style={styles.button}
-          onPress={() => navigation.navigate("Signup")}
-        >
+        <Pressable style={styles.button} onPress={() => navigation.navigate("Signup")}>
           <Text style={{ color: "grey" }}>Sign Up</Text>
         </Pressable>
       </View>
       <View style={{ marginVertical: 60 }}>
-        <Text style={{ fontSize: 18, fontWeight: 500 }}>Log In</Text>
+        <Text style={{ fontSize: 20, fontWeight: 900 }}>Log In</Text>
         <View style={{ marginVertical: 30 }}>
-          <View>
+          <View style={{ borderBottomColor: "grey", borderBottomWidth: 1 }}>
             <Text
               style={{
                 color: "grey",
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: "bold",
               }}
             >
               Your Email
             </Text>
-            <TextInput
-              style={styles.input}
-              value={input.email}
-              onChange={handleFormChange}
-            ></TextInput>
+            <TextInput></TextInput>
           </View>
-          <View style={{ marginVertical: 30 }}>
+          <View style={{ marginVertical: 30, borderBottomColor: "grey", borderBottomWidth: 1 }}>
             <Text
               style={{
                 color: "grey",
-                fontSize: 11,
+                fontSize: 13,
                 fontWeight: "bold",
               }}
             >
               Password
             </Text>
             <View>
-              <TextInput
-                style={styles.input}
-                value={input.password}
-                onChange={handleFormChange}
-                secureTextEntry={true}
-              />
-              
+              <TextInput secureTextEntry={true} />
             </View>
           </View>
-          <Pressable
-            style={{ backgroundColor: "#1B1212", borderRadius: 50 }}
-            onPress={handleSubmit}
-          >
+          <Pressable style={{ backgroundColor: "#1B1212", borderRadius: 50 }}>
             <Text
               style={{
                 textAlign: "center",
@@ -109,14 +81,14 @@ setInput((prev)=>({...prev, [email]:value}))
         >
           <Pressable
             style={{
-              width: 150,
+              width: 160,
               borderRadius: 50,
               borderWidth: 2,
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
-              marginHorizontal: 20,
+              marginHorizontal: 10,
               paddingVertical: 10,
             }}
           >
@@ -125,13 +97,14 @@ setInput((prev)=>({...prev, [email]:value}))
           </Pressable>
           <Pressable
             style={{
-              width: 150,
+              width: 160,
               borderRadius: 50,
               borderWidth: 2,
               display: "flex",
               flexDirection: "row",
               justifyContent: "center",
               alignItems: "center",
+              marginHorizontal: 10,
             }}
           >
             <FontAwesome6 name="square-x-twitter" size={24} color="black" />
@@ -144,7 +117,7 @@ setInput((prev)=>({...prev, [email]:value}))
 };
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#fee1cc",
+    backgroundColor: "#dbc1ac",
     flex: 1,
     paddingHorizontal: 30,
     paddingVertical: 70,
@@ -153,11 +126,6 @@ const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "flex-end",
-  },
-  button: {},
-  input: {
-    borderBottomColor: "grey",
-    borderBottomWidth: 1,
   },
 });
 
