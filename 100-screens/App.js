@@ -11,7 +11,7 @@ export default function App() {
       {/* <NavigationContainer>
         <AuthStack />
       </NavigationContainer> */}
-      <StatusBar hidden />
+      <StatusBar hidden={true} />
       <Screen4 />
     </>
   );
