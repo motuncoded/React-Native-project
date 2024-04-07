@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View, Image } from 'react-native'
 import React from 'react'
- import Img from "./people-illustration.jpg"
 const Onboarding  = () => {
   return (
       <View style={styles.container}>
